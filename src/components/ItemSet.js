@@ -5,7 +5,7 @@ export default function ItemSet() {
         <div className="bg-white py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    Item Set in Our Experimental Setup
+                    Item Set in the Experimental Setup
                 </h2>
                 <div className="mt-10 overflow-x-auto">
                     <table className="mx-auto w-full whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-hidden">
