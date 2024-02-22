@@ -5,20 +5,17 @@ const people = [
     {
         name: 'Saroj Baral',
         role: 'Engineering',
-        imageUrl:
-            '/saroj.jpeg',
+        imageUrl: '/saroj.jpeg',
     },
     {
         name: 'Sagar Kumar Thapa',
         role: 'Engineering',
-        imageUrl:
-            '/sagar.jpg',
+        imageUrl: '/sagar.jpg',
     },
     {
         name: 'Roshan Neupane',
         role: 'UI/UX | Engineering',
-        imageUrl:
-            '/roshan.jpg',
+        imageUrl: '/roshan.jpg',
     },
 ]
 
@@ -56,5 +53,7 @@ const Team = forwardRef((props, ref) => {
         </div>
     )
 })
+
+Team.displayName = "Team";
 
 export default Team
