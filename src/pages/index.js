@@ -7,16 +7,19 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import { Inter } from "next/font/google";
 import Carousel from '@/components/Carousel';
+import { useRef } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const teamRef = useRef(null);
+
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between ${inter.className}`}
     >
       <section className="w-full">
-        <Header />
+        <Header teamRef={teamRef} />
       </section>
 
       <section className="w-full">
@@ -40,7 +43,7 @@ export default function Home() {
       </section>
 
       <section className="w-full">
-        <Team />
+        <Team ref={teamRef} />
       </section>
 
       <section className="w-full">

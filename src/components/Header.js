@@ -45,7 +45,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Header({ teamRef }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
@@ -64,6 +64,7 @@ export default function Example() {
                         </div>
                     </Link>
                 </div>
+
                 <div className="flex lg:hidden">
                     <button
                         type="button"
@@ -74,9 +75,10 @@ export default function Example() {
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
+
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
                     <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                        <Popover.Button className="flex focus-visible:outline-none items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                             Features
                             <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                         </Popover.Button>
@@ -90,7 +92,7 @@ export default function Example() {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                         >
-                            <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                            <Popover.Panel className="absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
                                     {features.map((item) => (
                                         <div
@@ -114,6 +116,9 @@ export default function Example() {
                         </Transition>
                     </Popover>
 
+                    <button onClick={() => teamRef.current.scrollIntoView({ behavior: "smooth" })} className="text-sm font-semibold leading-6 text-gray-900">
+                        About
+                    </button>
                 </Popover.Group>
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -147,7 +152,7 @@ export default function Example() {
                                     {({ open }) => (
                                         <>
                                             <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Product
+                                                Features
                                                 <ChevronDownIcon
                                                     className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                                                     aria-hidden="true"
@@ -168,11 +173,17 @@ export default function Example() {
                                         </>
                                     )}
                                 </Disclosure>
+                                <button onClick={() => {
+                                    teamRef.current.scrollIntoView({ behavior: "smooth" })
+                                    setMobileMenuOpen(false)
+                                }} className="w-full text-left rounded-lg text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                    About
+                                </button>
                             </div>
                         </div>
                     </div>
                 </Dialog.Panel>
             </Dialog>
-        </header>
+        </header >
     )
 }
