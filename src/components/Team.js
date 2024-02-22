@@ -16,7 +16,7 @@ export default function Team() {
                 <div className="max-w-2xl">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our team.</h2>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Discover the innovative minds from Pulchowk Campus, Tribhuvan University, behind our project, "Dynamic Simulation of 2D Static Physical System". Our dedicated team specializes in transforming static images into dynamic simulations, blending technical skill and creativity to revolutionize educational experiences.
+                        Discover the innovative minds from Pulchowk Campus, Tribhuvan University, behind our project, &quot;Dynamic Simulation of 2D Static Physical System&quot;. Our dedicated team specializes in transforming static images into dynamic simulations, blending technical skill and creativity to revolutionize educational experiences.
                     </p>
                 </div>
                 <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
